@@ -1,4 +1,4 @@
-const sum = require('../src/maths');
+const math = require('../src/maths');
 
 describe("Math library tests", () => {
   var database;
@@ -21,11 +21,16 @@ describe("Math library tests", () => {
 
 
   test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+    expect(math.sum(1, 2)).toBe(3);
   });
 
   it('adds -2 + 2 to equal 3', () => {
-    expect(sum(-2, 2)).toBe(0);
+    expect(math.sum(-2, 2)).toBe(0);
+  });
+
+
+  it('multiply 2  * 5 to equal 10', () => {
+    expect(math.multiply(2, 5)).toBe(10);
   });
 
 });
