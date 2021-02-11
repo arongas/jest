@@ -33,4 +33,18 @@ describe("Math library tests", () => {
     expect(math.multiply(2, 5)).toBe(10);
   });
 
+
+  it('Test Spy', () => {
+    var spySum=jest.spyOn(math,'sum')
+    expect(math.sum(2, 5)).toBe(7);
+    expect(spySum).toHaveBeenCalled()
+  });
+
+
+  it('Test mock', () => {
+    math.sum = jest.fn(() => 3);
+    expect(math.sum(2, 5)).toBe(3);
+    expect(math.sum).toHaveBeenCalled()
+  });
+
 });
